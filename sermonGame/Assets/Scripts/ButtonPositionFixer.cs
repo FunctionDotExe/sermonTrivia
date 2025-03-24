@@ -11,17 +11,13 @@ public class ButtonPositionFixer : MonoBehaviour
         // Find the button panel if not assigned
         if (buttonPanel == null)
         {
-            GameObject panel = GameObject.Find("ButtonPanel");
-            if (panel != null)
-            {
-                buttonPanel = panel.GetComponent<RectTransform>();
-            }
+            buttonPanel = GetComponent<RectTransform>();
         }
         
         // Find all buttons if not assigned
         if (buttonRectTransforms == null || buttonRectTransforms.Length == 0)
         {
-            NumberButtonHandler[] handlers = FindObjectsOfType<NumberButtonHandler>();
+            NumberButtonHandler[] handlers = GetComponentsInChildren<NumberButtonHandler>();
             buttonRectTransforms = new RectTransform[handlers.Length];
             for (int i = 0; i < handlers.Length; i++)
             {
@@ -29,31 +25,31 @@ public class ButtonPositionFixer : MonoBehaviour
             }
         }
         
-        // Reposition buttons to the center of the panel
+        // Ensure the Canvas is properly set up
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 1;
+        }
+        
+        // Position the buttons
         RepositionButtons();
     }
     
     void RepositionButtons()
     {
-        if (buttonPanel == null || buttonRectTransforms == null || buttonRectTransforms.Length == 0)
+        if (buttonRectTransforms == null || buttonRectTransforms.Length == 0)
         {
-            Debug.LogError("ButtonPositionFixer: Missing button panel or buttons!");
+            Debug.LogError("No buttons found to position!");
             return;
         }
         
-        // Calculate the center of the panel
-        Vector2 panelCenter = new Vector2(0, 0); // Local coordinates center
+        float spacing = 220f;
+        float totalWidth = (buttonRectTransforms.Length - 1) * spacing;
+        float startX = -totalWidth / 2;
         
-        // Calculate button layout
-        int numButtons = buttonRectTransforms.Length;
-        float totalWidth = numButtons * 220; // 200px button width + 20px spacing
-        float startX = -totalWidth / 2 + 110; // Center the first button
-        
-        Debug.Log($"ButtonPositionFixer: Repositioning {numButtons} buttons");
-        Debug.Log($"ButtonPositionFixer: Panel center: {panelCenter}, Start X: {startX}");
-        
-        // Position buttons in a row at the center of the panel
-        for (int i = 0; i < numButtons; i++)
+        for (int i = 0; i < buttonRectTransforms.Length; i++)
         {
             RectTransform rectTransform = buttonRectTransforms[i];
             if (rectTransform != null)
@@ -64,7 +60,7 @@ public class ButtonPositionFixer : MonoBehaviour
                 rectTransform.pivot = new Vector2(0.5f, 0.5f);
                 
                 // Position the button
-                float xPos = startX + i * 220;
+                float xPos = startX + i * spacing;
                 rectTransform.anchoredPosition = new Vector2(xPos, 0);
                 
                 // Make sure the button is the right size

@@ -1,10 +1,9 @@
 using UnityEngine;
+using TMPro; // Required for TextMeshPro components
 
 public class ScoreManager : MonoBehaviour
 {
     private static ScoreManager _instance;
-    private SimpleMultiplayerManager gameManager;
-    
     public static ScoreManager Instance
     {
         get
@@ -21,30 +20,31 @@ public class ScoreManager : MonoBehaviour
             return _instance;
         }
     }
-    
-    void Awake()
+
+    private int currentScore = 0;
+    public TMP_Text scoreText; // Use TMP_Text for TextMeshPro
+
+    public void AddPoints(int points)
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
-        
-        gameManager = FindObjectOfType<SimpleMultiplayerManager>();
+        currentScore += points;
+        UpdateScoreDisplay(); // Call to update the UI
     }
-    
-    public void AddScore(int points)
+
+    public void AddTime(int time) // Add this method
     {
-        if (gameManager != null)
+        // Implement your logic for adding time here
+        Debug.Log($"Time added: {time}");
+    }
+
+    private void UpdateScoreDisplay()
+    {
+        if (scoreText != null)
         {
-            gameManager.AddPoints(points);
+            scoreText.text = "Score: " + currentScore; // Update the text component
         }
         else
         {
-            Debug.LogWarning("ScoreManager: SimpleMultiplayerManager not found!");
+            Debug.LogError("Score text is not assigned!"); // Error log if scoreText is not assigned
         }
     }
-} 
+}

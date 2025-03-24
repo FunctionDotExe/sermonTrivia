@@ -86,36 +86,38 @@ public class SermonOnTheMountTrivia : MonoBehaviour
         feedbackText.text = "";
     }
     
-    public void OnAnswerSelected(int answerIndex)
+  public void OnAnswerSelected(int answerIndex)
+{
+    if (currentQuestion == null) return;
+
+    bool isCorrect = (answerIndex == currentQuestion.correctAnswerIndex);
+
+    if (isCorrect)
     {
-        if (currentQuestion == null) return;
-        
-        bool isCorrect = (answerIndex == currentQuestion.correctAnswerIndex);
-        
-        if (isCorrect)
-        {
-            // Award points for correct answer
-            ScoreHelper.AwardPoints(currentQuestion.pointsForCorrectAnswer);
-            
-            // Show feedback
-            feedbackText.text = "Correct! +" + currentQuestion.pointsForCorrectAnswer + " points";
-        }
-        else
-        {
-            // Show feedback for incorrect answer
-            feedbackText.text = "Incorrect. The correct answer is: " + 
-                currentQuestion.answers[currentQuestion.correctAnswerIndex];
-        }
-        
-        // Disable answer buttons
-        for (int i = 0; i < answerButtons.Length; i++)
-        {
-            answerButtons[i].interactable = false;
-        }
-        
-        // Hide the panel after a delay
-        StartCoroutine(HidePanelAfterDelay(3f));
+        // Award points for correct answer
+        ScoreManager.Instance.AddPoints(currentQuestion.pointsForCorrectAnswer);
+
+        // Show feedback
+        feedbackText.text = "Correct! +" + currentQuestion.pointsForCorrectAnswer + " points";
     }
+    else
+    {
+        // Deduct points for incorrect answer
+        ScoreManager.Instance.AddPoints(-15); // Adjust this value as needed
+
+        // Show feedback for incorrect answer
+        feedbackText.text = "Incorrect. The correct answer was: " + currentQuestion.answers[currentQuestion.correctAnswerIndex];
+    }
+
+    // Disable answer buttons
+    foreach (Button button in answerButtons)
+    {
+        button.interactable = false;
+    }
+
+    // Hide the panel after a delay
+    StartCoroutine(HidePanelAfterDelay(3f));
+}
     
     private IEnumerator HidePanelAfterDelay(float delay)
     {

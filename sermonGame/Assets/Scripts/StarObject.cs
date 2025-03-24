@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class StarObject : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class StarObject : MonoBehaviour
     public string sceneToLoad = "QuizScene";
     public float timeBonus = 30f;
     public float timePenalty = -15f;
+    public int pointValue = 10;
     
     private Material material;
     private ParticleSystem flameParticles;
     private ParticleSystem beaconParticles;
+    private GameObject gameManagerObject;
 
     void Start()
     {
@@ -30,6 +33,13 @@ public class StarObject : MonoBehaviour
         {
             Debug.LogError("No Renderer found on star object!");
         }
+
+        // Find the GameManager GameObject in the scene
+        gameManagerObject = GameObject.Find("GameManager");
+        if (gameManagerObject == null)
+        {
+            Debug.LogError("GameManager GameObject not found in scene!");
+        }
     }
 
     void Update()
@@ -43,20 +53,31 @@ public class StarObject : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player hit star!");
-            
-            // Prepare GameManager for scene transition
-            if (GameManager.Instance != null)
+            if (gameManagerObject != null)
             {
-                GameManager.Instance.PrepareForQuizScene(gameObject, other.gameObject);
+                // Use SendMessage to call the AddPoints method
+                gameManagerObject.SendMessage("AddPoints", pointValue, SendMessageOptions.DontRequireReceiver);
             }
-            
-            // Load quiz scene
-            SceneManager.LoadScene(sceneToLoad);
+            else
+            {
+                // Try to find it again in case it was added after Start
+                gameManagerObject = GameObject.Find("GameManager");
+                if (gameManagerObject != null)
+                {
+                    gameManagerObject.SendMessage("AddPoints", pointValue, SendMessageOptions.DontRequireReceiver);
+                }
+            }
+            Destroy(gameObject);
         }
+    }
+
+    void UpdateScore(int points)
+    {
+        // Use the ScoreManager instead of directly accessing MultiplayerGameManager
+        ScoreManager.Instance.AddPoints(points);
     }
 }

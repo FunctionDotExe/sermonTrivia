@@ -28,7 +28,6 @@ public class MultiplayerGameManager : MonoBehaviour
     private int currentPlayerIndex = 0;
     private int currentRound = 1;
     private int[] playerScores = new int[4];
-    private int scoreAtTurnStart = 0;
     private float remainingTime = 0f;
     private bool isTimerRunning = false;
     private bool isGameOver = false;
@@ -36,7 +35,16 @@ public class MultiplayerGameManager : MonoBehaviour
     // Singleton instance
     public static MultiplayerGameManager Instance { get; private set; }
     
-    void Awake()
+    private MultiplayerPlayerData[] players;
+    
+    public GameObject initialPanel;
+    public GameObject gameplayPanel;
+    public GameObject endRoundPanel;
+    public TextMeshProUGUI scoreText;
+    
+    private bool isGameActive = false;
+    
+    private void Awake()
     {
         Debug.Log("MultiplayerGameManager Awake called");
         
@@ -109,6 +117,8 @@ public class MultiplayerGameManager : MonoBehaviour
         {
             Debug.LogError("Game Over Panel is not assigned!");
         }
+        
+        InitializeGame();
     }
     
     void Update()
@@ -127,128 +137,91 @@ public class MultiplayerGameManager : MonoBehaviour
         }
     }
     
-    void StartNewTurn()
+    void InitializeGame()
     {
-        Debug.Log($"Starting new turn for Player {currentPlayerIndex + 1}");
-        
-        // Update UI
-        UpdatePlayerDisplay();
-        UpdateRoundDisplay();
-        
-        // Show button selection panel
-        if (buttonSelectionPanel != null)
+        players = new MultiplayerPlayerData[4];
+        for (int i = 0; i < 4; i++)
         {
-            buttonSelectionPanel.SetActive(true);
-            Debug.Log("Button selection panel activated");
-        }
-        else
-        {
-            Debug.LogError("Button Selection Panel is null!");
+            players[i] = new MultiplayerPlayerData(i + 1);
         }
         
-        // Randomize button numbers
-        RandomizeButtonNumbers();
-        
-        // Disable player control until they select a number
-        if (playerController != null)
-        {
-            playerController.enabled = false;
-            Debug.Log("Player controller disabled");
-        }
-        else
-        {
-            Debug.LogWarning("Player Controller is not assigned!");
-        }
-        
-        // Store current score to calculate difference at end of turn
-        scoreAtTurnStart = GetCurrentPlayerScore();
+        ShowInitialPanel();
     }
     
-    void RandomizeButtonNumbers()
+    public void StartPlayerTurn(int playerIndex)
     {
-        // Create a list of available numbers (1-4)
-        System.Collections.Generic.List<int> availableNumbers = new System.Collections.Generic.List<int> { 1, 2, 3, 4 };
+        if (playerIndex < 0 || playerIndex >= players.Length) return;
         
-        // Assign random numbers to buttons
-        for (int i = 0; i < numberButtons.Length; i++)
-        {
-            // Get a random index from the available numbers
-            int randomIndex = Random.Range(0, availableNumbers.Count);
-            int numberValue = availableNumbers[randomIndex];
-            
-            // Remove the selected number from available numbers
-            availableNumbers.RemoveAt(randomIndex);
-            
-            // Update button text
-            TextMeshProUGUI buttonText = numberButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            if (buttonText != null)
-            {
-                buttonText.text = numberValue.ToString();
-            }
-            
-            // Store the number value in the button's tag
-            numberButtons[i].tag = numberValue.ToString();
-        }
+        currentPlayerIndex = playerIndex;
+        isGameActive = true;
+        
+        // Hide initial panel and show gameplay panel
+        if (initialPanel != null) initialPanel.SetActive(false);
+        if (gameplayPanel != null) gameplayPanel.SetActive(true);
+        
+        // Enable player movement
+        EnablePlayerMovement(true);
+        
+        StartCoroutine(PlayerTurnTimer());
     }
     
-    void OnNumberButtonClicked(int buttonIndex)
+    IEnumerator PlayerTurnTimer()
     {
-        // Get the number value from the button's tag
-        int numberValue = int.Parse(numberButtons[buttonIndex].tag);
-        
-        // Calculate time for this turn
-        remainingTime = numberValue * timeMultiplier;
-        
-        // Hide button selection panel
-        buttonSelectionPanel.SetActive(false);
-        
-        // Enable player control
-        if (playerController != null)
+        while (players[currentPlayerIndex].remainingTime > 0 && isGameActive)
         {
-            playerController.enabled = true;
+            players[currentPlayerIndex].remainingTime -= Time.deltaTime;
+            UpdateUI();
+            yield return null;
         }
         
-        // Start the timer
-        isTimerRunning = true;
-        UpdateTimerDisplay();
-        
-        // Update player indicator
-        UpdatePlayerIndicator();
+        EndPlayerTurn();
     }
     
     void EndPlayerTurn()
     {
-        // Stop the timer
-        isTimerRunning = false;
+        isGameActive = false;
+        EnablePlayerMovement(false);
         
-        // Calculate points earned this turn
-        int currentScore = GetCurrentPlayerScore();
-        int pointsEarned = currentScore - scoreAtTurnStart;
-        
-        // Add points to player's score
-        playerScores[currentPlayerIndex] += pointsEarned;
-        
-        // Update score display
-        UpdateScoreDisplay();
-        
-        // Move to next player
-        currentPlayerIndex = (currentPlayerIndex + 1) % numberOfPlayers;
-        
-        // Check if we've completed a round
-        if (currentPlayerIndex == 0)
+        currentPlayerIndex++;
+        if (currentPlayerIndex >= players.Length)
         {
+            currentPlayerIndex = 0;
             currentRound++;
             
-            // Check if game is over
             if (currentRound > numberOfRounds)
             {
                 EndGame();
                 return;
             }
+            
+            ShowEndRoundPanel();
         }
+        else
+        {
+            StartPlayerTurn(currentPlayerIndex);
+        }
+    }
+    
+    void ShowInitialPanel()
+    {
+        if (initialPanel != null) initialPanel.SetActive(true);
+        if (gameplayPanel != null) gameplayPanel.SetActive(false);
+        if (endRoundPanel != null) endRoundPanel.SetActive(false);
+    }
+    
+    void ShowEndRoundPanel()
+    {
+        if (initialPanel != null) initialPanel.SetActive(false);
+        if (gameplayPanel != null) gameplayPanel.SetActive(false);
+        if (endRoundPanel != null) endRoundPanel.SetActive(true);
         
-        // Start the next turn
-        StartNewTurn();
+        StartCoroutine(WaitAndStartNextRound());
+    }
+    
+    IEnumerator WaitAndStartNextRound()
+    {
+        yield return new WaitForSeconds(3f);
+        StartPlayerTurn(0);
     }
     
     void EndGame()
@@ -263,14 +236,14 @@ public class MultiplayerGameManager : MonoBehaviour
         
         // Find the winner
         int winnerIndex = 0;
-        int highestScore = playerScores[0];
+        int highestScore = players[0].score;
         
-        for (int i = 1; i < playerScores.Length; i++)
+        for (int i = 1; i < players.Length; i++)
         {
-            if (playerScores[i] > highestScore)
+            if (players[i].score > highestScore)
             {
                 winnerIndex = i;
-                highestScore = playerScores[i];
+                highestScore = players[i].score;
             }
         }
         
@@ -300,7 +273,7 @@ public class MultiplayerGameManager : MonoBehaviour
     {
         if (timerText != null)
         {
-            timerText.text = "Time: " + Mathf.CeilToInt(remainingTime).ToString();
+            timerText.text = "Time: " + Mathf.CeilToInt(players[currentPlayerIndex].remainingTime).ToString();
         }
     }
     
@@ -318,7 +291,7 @@ public class MultiplayerGameManager : MonoBehaviour
         {
             if (playerScoreTexts[i] != null)
             {
-                playerScoreTexts[i].text = "P" + (i + 1) + ": " + playerScores[i];
+                playerScoreTexts[i].text = "P" + (i + 1) + ": " + players[i].score;
             }
         }
     }
@@ -341,15 +314,52 @@ public class MultiplayerGameManager : MonoBehaviour
         }
     }
     
-    // Helper method to get current player's score
-    int GetCurrentPlayerScore()
+    void UpdateUI()
     {
-        // This should be replaced with your actual scoring system
-        if (GameManager.Instance != null)
+        if (timerText != null)
+            timerText.text = $"Time: {players[currentPlayerIndex].remainingTime:F1}";
+        
+        if (scoreText != null)
+            scoreText.text = $"Score: {players[currentPlayerIndex].score}";
+        
+        if (currentPlayerText != null)
+            currentPlayerText.text = $"Player {currentPlayerIndex + 1}";
+        
+        if (roundText != null)
+            roundText.text = $"Round {currentRound}/{numberOfRounds}";
+    }
+    
+    void EnablePlayerMovement(bool enable)
+    {
+        if (playerController != null)
         {
-            return GameManager.Instance.GetPlayerScore();
+            playerController.enabled = enable;
         }
-        return 0;
+    }
+    
+    void OnNumberButtonClicked(int buttonIndex)
+    {
+        // Get the number value from the button's tag
+        int numberValue = int.Parse(numberButtons[buttonIndex].tag);
+        
+        // Calculate time for this turn
+        players[currentPlayerIndex].remainingTime = numberValue * timeMultiplier;
+        
+        // Hide button selection panel
+        buttonSelectionPanel.SetActive(false);
+        
+        // Enable player control
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+        }
+        
+        // Start the timer
+        isTimerRunning = true;
+        UpdateTimerDisplay();
+        
+        // Update player indicator
+        UpdatePlayerIndicator();
     }
     
     // Public method for other scripts to call when points are earned
@@ -357,7 +367,7 @@ public class MultiplayerGameManager : MonoBehaviour
     {
         if (!isGameOver)
         {
-            playerScores[currentPlayerIndex] += points;
+            players[currentPlayerIndex].score += points;
             UpdateScoreDisplay();
         }
     }
@@ -369,5 +379,45 @@ public class MultiplayerGameManager : MonoBehaviour
         {
             EndPlayerTurn();
         }
+    }
+
+    public MultiplayerPlayerData GetCurrentPlayer()
+    {
+        if (currentPlayerIndex >= 0 && currentPlayerIndex < players.Length)
+        {
+            return players[currentPlayerIndex];
+        }
+        return null;
+    }
+
+    void StartNewTurn()
+    {
+        if (currentPlayerIndex >= 0 && currentPlayerIndex < players.Length)
+        {
+            StartPlayerTurn(currentPlayerIndex);
+        }
+    }
+
+    public void AddTime(float timeToAdd)
+    {
+        if (currentPlayerIndex >= 0 && currentPlayerIndex < players.Length)
+        {
+            players[currentPlayerIndex].remainingTime += timeToAdd;
+            UpdateUI();
+        }
+    }
+
+    public int GetPlayerScore(int playerIndex)
+    {
+        if (playerIndex >= 0 && playerIndex < players.Length)
+        {
+            return players[playerIndex].score;
+        }
+        return 0;
+    }
+
+    public int GetCurrentPlayerScore()
+    {
+        return GetPlayerScore(currentPlayerIndex);
     }
 } 

@@ -18,7 +18,7 @@ public class QuizManager : MonoBehaviour
     public Button returnButton; // Button to return to main scene
     
     [Header("Quiz Settings")]
-    public int pointsForCorrectAnswer = 10;
+    public float pointsForCorrectAnswer = 10;
     public int pointsForWrongAnswer = -15;
     public float timeBonus = 30f;
     public float timePenalty = -15f;
@@ -77,9 +77,9 @@ public class QuizManager : MonoBehaviour
         }
         
         // Get current score from GameManager if available
-        if (GameManager.Instance != null)
+        if (MultiplayerGameManager.Instance != null)
         {
-            PlayerData currentPlayer = GameManager.Instance.GetCurrentPlayer();
+            MultiplayerPlayerData currentPlayer = MultiplayerGameManager.Instance.GetCurrentPlayer();
             if (currentPlayer != null)
             {
                 currentScore = currentPlayer.score;
@@ -219,18 +219,15 @@ public class QuizManager : MonoBehaviour
             correctAnswers++;
             
             // Correct answer
-            feedbackText.text = "Correct! +10 points";
+            feedbackText.text = "Correct! +" + pointsForCorrectAnswer + " points";
             feedbackText.color = Color.green;
             
             // Add points locally
             currentScore += pointsForCorrectAnswer;
             
-            // Add points and time bonus to GameManager
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.AddPoints(pointsForCorrectAnswer);
-                GameManager.Instance.AddTime(timeBonus);
-            }
+            // Add points and time bonus using ScoreManager
+            ScoreManager.Instance.AddPoints(pointsForCorrectAnswer);
+            ScoreManager.Instance.AddTime(timeBonus);
         }
         else
         {
@@ -243,10 +240,10 @@ public class QuizManager : MonoBehaviour
             currentScore += pointsForWrongAnswer; // This will subtract 15 points
             
             // Apply point deduction and time penalty to GameManager
-            if (GameManager.Instance != null)
+            if (MultiplayerGameManager.Instance != null)
             {
-                GameManager.Instance.AddPoints(pointsForWrongAnswer);
-                GameManager.Instance.AddTime(timePenalty);
+                MultiplayerGameManager.Instance.AddPoints(pointsForWrongAnswer);
+                MultiplayerGameManager.Instance.AddTime(timePenalty);
             }
         }
         
@@ -369,6 +366,14 @@ public class QuizManager : MonoBehaviour
     {
         // Unregister from scene loaded event
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void UpdateScore(int points)
+    {
+        if (MultiplayerGameManager.Instance != null)
+        {
+            MultiplayerGameManager.Instance.AddPoints(points);
+        }
     }
 }
 

@@ -38,8 +38,6 @@ public class SimpleMultiplayerManager : MonoBehaviour
     // Store references to button handlers
     private NumberButtonHandler[] buttonHandlers;
 
-    [SerializeField] private int currentTargetNumber = 1; // Default target is 1
-
     [SerializeField] private float gameTimer = 300f; // 5 minutes default
     private float currentTime;
     private int currentScore = 0;
@@ -52,7 +50,7 @@ public class SimpleMultiplayerManager : MonoBehaviour
         for (int i = 0; i < playerScores.Length; i++)
         {
             playerScores[i] = 0;
- }
+        }
 
         // Check for EventSystem
         if (FindObjectOfType<EventSystem>() == null)
@@ -483,33 +481,15 @@ public class SimpleMultiplayerManager : MonoBehaviour
 
     void UpdateScoreDisplay()
     {
-        if (playerScoreTexts == null || playerScoreTexts.Length == 0)
-            return;
-
-        for (int i = 0; i < playerScoreTexts.Length && i < playerScores.Length; i++)
-        {
-            if (playerScoreTexts[i] != null)
-            {
-                playerScoreTexts[i].text = $"P{i + 1}: {playerScores[i]}";
-
-                // Set color based on player
-                if (i < playerColors.Length)
-                {
-                    playerScoreTexts[i].color = playerColors[i];
-                }
-            }
-        }
+        // Since we're not using multiplayer anymore, this can be empty
+        // or you can delete this script entirely
     }
 
     // Helper method to get current player's score
     int GetCurrentPlayerScore()
     {
         // This should be replaced with your actual scoring system
-        if (GameManager.Instance != null)
-        {
-            return GameManager.Instance.GetPlayerScore();
-        }
-        return 0;
+        return 0; // Placeholder return, actual implementation needed
     }
 
     // Public method for other scripts to call when points are earned
@@ -693,5 +673,10 @@ public class SimpleMultiplayerManager : MonoBehaviour
             int seconds = Mathf.FloorToInt(currentTime % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+    }
+
+    void UpdateScore(int points)
+    {
+        // Placeholder for the removed MultiplayerGameManager
     }
 }

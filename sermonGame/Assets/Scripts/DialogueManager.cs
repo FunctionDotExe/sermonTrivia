@@ -57,6 +57,19 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("Dialogue panel reference is missing!");
         }
         
+        // Setup choice buttons with proper initialization
+        for (int i = 0; i < choiceButtons.Length; i++)
+        {
+            int choiceIndex = i; // Capture the index for the lambda
+            Button button = choiceButtons[i];
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => OnChoiceSelected(choiceIndex));
+                button.interactable = true;
+            }
+        }
+        
         // Find player
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -74,13 +87,6 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Found player movement script: " + (playerMovementScript != null));
             Debug.Log("Found player look script: " + (playerLookScript != null));
         }
-        
-        // Setup choice buttons
-        for (int i = 0; i < choiceButtons.Length; i++)
-        {
-            int choiceIndex = i; // Capture the index for the lambda
-            choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
-        }
     }
     
     public void StartDialogue(DialogueScenario scenario, Transform npcTransform)
@@ -95,6 +101,10 @@ public class DialogueManager : MonoBehaviour
         
         // Show dialogue panel
         dialoguePanel.SetActive(true);
+        
+        // Make sure cursor is visible and unlocked
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         
         // Set NPC name
         if (npcNameText != null)
@@ -114,10 +124,6 @@ public class DialogueManager : MonoBehaviour
         
         // Freeze player movement
         FreezePlayerMovement();
-        
-        // Make cursor visible
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
     
     void FreezePlayerMovement()
@@ -221,6 +227,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < choices.Length && i < choiceButtons.Length; i++)
         {
             choiceButtons[i].gameObject.SetActive(true);
+            choiceButtons[i].interactable = true;
             choiceTexts[i].text = choices[i].choiceText;
         }
     }

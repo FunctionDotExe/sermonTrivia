@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StarTriviaInteraction : NPCInteraction
 {
@@ -26,6 +27,13 @@ public class StarTriviaInteraction : NPCInteraction
     private Material starMaterial;
     private bool isInteracting = false;
     
+    public UnityEvent<int> OnChoiceMade = new UnityEvent<int>();
+    private GameManager gameManager;
+    
+    // Use 'new' keyword to explicitly hide the base class field
+    // Only uncomment if you need to override the base class field
+    // [SerializeField] new private int correctChoiceIndex = 0;
+
     void Awake()
     {
         // Set up the NPC interaction properties
@@ -35,7 +43,6 @@ public class StarTriviaInteraction : NPCInteraction
         // Set up the choices
         choiceTexts = new string[answerOptions.Length];
         responseTexts = new string[answerOptions.Length];
-        pointsAwarded = new int[answerOptions.Length];
         
         for (int i = 0; i < answerOptions.Length; i++)
         {
@@ -44,20 +51,25 @@ public class StarTriviaInteraction : NPCInteraction
             if (i == correctAnswerIndex)
             {
                 responseTexts[i] = "Correct! You've gained spiritual wisdom!";
-                pointsAwarded[i] = pointsForCorrectAnswer;
             }
             else
             {
                 responseTexts[i] = "That's not quite right. The correct answer was: " + answerOptions[correctAnswerIndex];
-                pointsAwarded[i] = 0;
             }
         }
-        
-        correctChoiceIndex = correctAnswerIndex;
     }
     
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+        
+        // Find the GameManager in the scene
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found! Make sure there's a GameManager in your scene.");
+        }
+        
         // Set up star appearance
         Renderer renderer = GetComponent<Renderer>();
         if (renderer != null)
@@ -69,9 +81,6 @@ public class StarTriviaInteraction : NPCInteraction
         
         // Add a rotating animation
         StartCoroutine(AnimateStar());
-        
-        // Call base Start after setting up our properties
-        base.Start();
     }
     
     System.Collections.IEnumerator AnimateStar()
@@ -184,13 +193,11 @@ public class StarTriviaInteraction : NPCInteraction
                 ? "Correct! You've gained spiritual wisdom!" 
                 : "That's not quite right. The correct answer was: " + answerOptions[correctAnswerIndex];
                 
-            int points = (i == correctAnswerIndex) ? pointsForCorrectAnswer : 0;
             bool isCorrect = (i == correctAnswerIndex);
-            
             choices[i] = new DialogueChoice(
                 answerOptions[i],  // choiceText
                 responseText,      // responseText
-                points,            // pointsAwarded
+                isCorrect ? pointsForCorrectAnswer : 0,  // pointValue
                 isCorrect          // isCorrect
             );
         }
@@ -251,4 +258,30 @@ public class StarTriviaInteraction : NPCInteraction
             Debug.LogWarning("No collection effect prefab assigned to star!");
         }
     }
-} 
+
+    // Create a new method with a different name to avoid conflicts
+    protected void OnChoiceSelected(int choiceIndex)
+    {
+        // Add our score logic
+        if (gameManager != null && pointsAwarded.Length > choiceIndex)
+        {
+            Debug.Log($"Adding {pointsAwarded[choiceIndex]} points for choice {choiceIndex}");
+            gameManager.AddPoints(pointsAwarded[choiceIndex]);
+        }
+        else
+        {
+            if (gameManager == null)
+            {
+                Debug.LogError("Cannot add points - GameManager is null!");
+                // Try to find it again
+                gameManager = FindObjectOfType<GameManager>();
+                if (gameManager != null && pointsAwarded.Length > choiceIndex)
+                {
+                    gameManager.AddPoints(pointsAwarded[choiceIndex]);
+                }
+            }
+        }
+        
+        OnChoiceMade?.Invoke(choiceIndex);
+    }
+}

@@ -6,9 +6,10 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
     public float jumpForce = 7f;
     public float mouseSensitivity = 2f;
+    public float rotationSpeed = 100f;
     
     [Header("View Bobbing")]
     public float bobbingSpeed = 14f;
@@ -29,6 +30,18 @@ public class PlayerController : MonoBehaviour
     
     private SimpleMultiplayerManager multiplayerManager;
     
+    private CharacterController characterController;
+    
+    // Reference to the main camera
+    private Camera mainCamera;
+    // Reference to the player's body that should rotate
+    public Transform playerBody;
+    // Reference to the camera transform
+    private Transform cameraTransform;
+    // Original camera position and rotation
+    private Vector3 originalCameraPosition;
+    private Quaternion originalCameraRotation;
+    
     void Awake()
     {
         // Find the multiplayer manager
@@ -40,20 +53,27 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        // Get components
+        // Try to get either CharacterController or Rigidbody
+        characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-        playerCamera = GetComponentInChildren<Camera>();
         
-        if (rb == null)
+        // Log which movement system we're using
+        if (characterController != null)
         {
-            Debug.LogError("No Rigidbody found on player!");
-            return;
+            Debug.Log("Using CharacterController for movement");
+        }
+        else if (rb != null)
+        {
+            Debug.Log("Using Rigidbody for movement");
+        }
+        else
+        {
+            Debug.LogWarning("No CharacterController or Rigidbody found on player!");
         }
         
-        // Configure rigidbody
-        rb.freezeRotation = true;
+        // Get components
+        playerCamera = GetComponentInChildren<Camera>();
         
-        // Store camera default position
         if (playerCamera != null)
         {
             defaultCameraY = playerCamera.transform.localPosition.y;
@@ -63,13 +83,75 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("No camera found as child of player!");
         }
         
-        // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Get the main camera
+        mainCamera = Camera.main;
+        
+        // If no player body is assigned, use this transform
+        if (playerBody == null)
+        {
+            playerBody = transform;
+        }
+        
+        // Find and store the camera
+        if (Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+            originalCameraPosition = cameraTransform.position;
+            originalCameraRotation = cameraTransform.rotation;
+            
+            // Detach camera from player if it's a child
+            if (cameraTransform.IsChildOf(transform))
+            {
+                cameraTransform.SetParent(null);
+                Debug.Log("Detached camera from player");
+            }
+        }
+        
+        // Make sure cursor is visible and not locked
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     
     void Update()
     {
+        // Direct keyboard input
+        float horizontal = 0f;
+        float vertical = 0f;
+        
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            vertical = 1f;
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            vertical = -1f;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            horizontal = -1f;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            horizontal = 1f;
+        
+        // Calculate movement in world space
+        Vector3 movement = new Vector3(horizontal, 0f, vertical);
+        
+        // Move the player object
+        transform.position += movement * moveSpeed * Time.deltaTime;
+        
+        // Optional: Rotate player to face movement direction
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
+        
+        // Reset camera position and rotation each frame to prevent it from moving with the player
+        if (cameraTransform != null)
+        {
+            cameraTransform.position = originalCameraPosition;
+            cameraTransform.rotation = originalCameraRotation;
+        }
+        
+        // Debug output
+        if (movement.magnitude > 0.1f)
+        {
+            Debug.Log($"Moving player: {movement}, Position: {transform.position}");
+        }
+        
         // Mouse look
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -191,6 +273,16 @@ public class PlayerController : MonoBehaviour
         if (multiplayerManager != null)
         {
             multiplayerManager.AddPoints(points);
+        }
+    }
+    
+    void OnDisable()
+    {
+        // Make sure camera is reset when script is disabled
+        if (cameraTransform != null)
+        {
+            cameraTransform.position = originalCameraPosition;
+            cameraTransform.rotation = originalCameraRotation;
         }
     }
 }
