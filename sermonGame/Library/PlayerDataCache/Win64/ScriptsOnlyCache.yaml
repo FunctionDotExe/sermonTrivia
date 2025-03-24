@@ -31,6 +31,7 @@ ScriptsOnlyBuild:
     - StarObject
     - StarTriviaInteraction
     - StarTriviaSetup
+    - Timer
     - UnityStandardAssets.ImageEffects.SunShafts
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -133,6 +134,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -238,6 +243,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8088}
     - Class: 114
       Script: {instanceID: 8276}
+    - Class: 114
+      Script: {instanceID: 109028}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -346,7 +353,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 8b6737985d25eac16c9e6e2a2c5b4a60
+      Hash: 9e3b5e1213e30cc827c401121e8f0633
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerMovementWithJump
@@ -1156,7 +1163,7 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStayMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b6fedfcf2dcb2ebde70968ff431a79c2
+      Hash: e42b59cddbdef456195bf15168335d39
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SimplePlayerMovement
@@ -1210,7 +1217,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 0aaa149771f6e173c08a35e374c3090f
+      Hash: 5e45d3f3c158f5eb2e6d5ae545458aaf
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: QuizManager
@@ -1844,6 +1851,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a61c63da128c5c29922a7ab53d2ae2ba
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Timer
   platform: 19
   scenePathNames:
   - Assets/Scenes/DemoScene.unity

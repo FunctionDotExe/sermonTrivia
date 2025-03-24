@@ -371,6 +371,7 @@
 "Assets/Scripts/StarTriviaSetup.cs"
 "Assets/Scripts/StaticCamera.cs"
 "Assets/Scripts/TextFixer.cs"
+"Assets/Scripts/Timer.cs"
 "Assets/Scripts/TriviaScoreIntegrator.cs"
 "Assets/Scripts/UISetup.cs"
 "Assets/SimplePoly - Town Pack/DemoScene/FlyCamera.cs"

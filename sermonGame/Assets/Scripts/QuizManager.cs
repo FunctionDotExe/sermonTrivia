@@ -17,6 +17,9 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI completionText; // Text to show final results
     public Button returnButton; // Button to return to main scene
     
+    [Header("Audio")]
+    public AudioSource backgroundMusic;
+    
     [Header("Quiz Settings")]
     public float pointsForCorrectAnswer = 10;
     public int pointsForWrongAnswer = -15;
@@ -53,6 +56,13 @@ public class QuizManager : MonoBehaviour
         
         // Setup UI
         SetupButtons();
+        
+        // Setup background music
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.loop = true;
+            backgroundMusic.Play();
+        }
         
         // Store player position if not already returning from quiz
         if (!isReturningFromQuiz && GameObject.FindGameObjectWithTag("Player") != null)
@@ -107,6 +117,16 @@ public class QuizManager : MonoBehaviour
     {
         if (!canAnswer) return;
 
+        // Get the number of active answers for the current question
+        int activeAnswers = 0;
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            if (answerButtons[i].gameObject.activeSelf)
+            {
+                activeAnswers++;
+            }
+        }
+
         // Controller input for navigation (D-pad or left stick)
         float verticalInput = Input.GetAxis("Vertical") + Input.GetAxis("DPadVertical");
         bool confirmPressed = Input.GetButtonDown("XButton"); // X button press
@@ -118,7 +138,20 @@ public class QuizManager : MonoBehaviour
             if (verticalInput > stickSensitivity)
             {
                 selectedButtonIndex--;
-                if (selectedButtonIndex < 0) selectedButtonIndex = answerButtons.Length - 1;
+                // Find the previous active button
+                while (selectedButtonIndex >= 0 && !answerButtons[selectedButtonIndex].gameObject.activeSelf)
+                {
+                    selectedButtonIndex--;
+                }
+                if (selectedButtonIndex < 0)
+                {
+                    // Wrap to the last active button
+                    selectedButtonIndex = answerButtons.Length - 1;
+                    while (selectedButtonIndex >= 0 && !answerButtons[selectedButtonIndex].gameObject.activeSelf)
+                    {
+                        selectedButtonIndex--;
+                    }
+                }
                 UpdateButtonSelection();
                 lastNavigationTime = Time.time;
             }
@@ -126,14 +159,27 @@ public class QuizManager : MonoBehaviour
             else if (verticalInput < -stickSensitivity)
             {
                 selectedButtonIndex++;
-                if (selectedButtonIndex >= answerButtons.Length) selectedButtonIndex = 0;
+                // Find the next active button
+                while (selectedButtonIndex < answerButtons.Length && !answerButtons[selectedButtonIndex].gameObject.activeSelf)
+                {
+                    selectedButtonIndex++;
+                }
+                if (selectedButtonIndex >= answerButtons.Length)
+                {
+                    // Wrap to the first active button
+                    selectedButtonIndex = 0;
+                    while (selectedButtonIndex < answerButtons.Length && !answerButtons[selectedButtonIndex].gameObject.activeSelf)
+                    {
+                        selectedButtonIndex++;
+                    }
+                }
                 UpdateButtonSelection();
                 lastNavigationTime = Time.time;
             }
         }
 
         // X button press to select answer
-        if (confirmPressed)
+        if (confirmPressed && answerButtons[selectedButtonIndex].gameObject.activeSelf)
         {
             answerButtons[selectedButtonIndex].onClick.Invoke();
         }
@@ -143,7 +189,7 @@ public class QuizManager : MonoBehaviour
         {
             for (int i = 0; i < answerButtons.Length; i++)
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i) && answerButtons[i].gameObject.activeSelf)
                 {
                     answerButtons[i].onClick.Invoke();
                 }
@@ -157,6 +203,8 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < answerButtons.Length; i++)
         {
             Button button = answerButtons[i];
+            if (!button.gameObject.activeSelf) continue;
+
             ColorBlock colors = button.colors;
             
             if (i == selectedButtonIndex)
@@ -341,6 +389,13 @@ public class QuizManager : MonoBehaviour
     {
         Debug.Log("Showing completion panel");
         
+        // Stop the background music
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Stop();
+            backgroundMusic.loop = false;
+        }
+        
         // Hide question panel
         if (questionPanel != null)
         {
@@ -388,6 +443,13 @@ public class QuizManager : MonoBehaviour
     public void ReturnToMainScene()
     {
         Debug.Log("Returning to main scene");
+        
+        // Stop the background music
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Stop();
+            backgroundMusic.loop = false;
+        }
         
         // Cancel any pending invokes
         CancelInvoke();
