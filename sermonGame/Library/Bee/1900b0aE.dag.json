@@ -385,7 +385,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 107,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt"
@@ -411,7 +411,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 44684,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp2"
@@ -2448,7 +2448,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 52273,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt"
@@ -2474,7 +2474,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 91318,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.rsp2"
@@ -3128,7 +3128,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 99445,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt"
@@ -3154,7 +3154,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 150082,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp2"
@@ -3819,7 +3819,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 157837,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt"
@@ -3845,7 +3845,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 194024,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.rsp2"
@@ -4416,7 +4416,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 202484,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.UnityAdditionalFile.txt"
@@ -4442,7 +4442,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 236155,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.rsp2"
@@ -4966,7 +4966,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 244718,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.UnityAdditionalFile.txt"
@@ -4992,7 +4992,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 281157,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.rsp2"
@@ -5527,7 +5527,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 289714,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.UnityAdditionalFile.txt"
@@ -5553,7 +5553,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 354329,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.rsp2"
@@ -6376,7 +6376,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 362412,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.UnityAdditionalFile.txt"
@@ -6402,7 +6402,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 398467,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.rsp2"
@@ -6924,7 +6924,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 406461,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Settings.Editor.UnityAdditionalFile.txt"
@@ -6950,7 +6950,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 440823,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Settings.Editor.rsp2"
@@ -7465,7 +7465,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 449388,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.UnityAdditionalFile.txt"
@@ -7491,7 +7491,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 484569,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.rsp2"
@@ -8008,7 +8008,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 493174,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.UnityAdditionalFile.txt"
@@ -8034,7 +8034,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 527159,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.rsp2"
@@ -8540,7 +8540,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 535730,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.UnityAdditionalFile.txt"
@@ -8566,7 +8566,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 572898,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.rsp2"
@@ -9112,7 +9112,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 581172,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.UnityAdditionalFile.txt"
@@ -9138,7 +9138,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 619403,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.rsp2"
@@ -9698,7 +9698,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 627679,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.UnityAdditionalFile.txt"
@@ -9724,7 +9724,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 661690,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.rsp2"
@@ -10234,7 +10234,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 670228,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.UnityAdditionalFile.txt"
@@ -10260,7 +10260,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 755978,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.rsp2"
@@ -11176,7 +11176,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 764272,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.UnityAdditionalFile.txt"
@@ -11202,7 +11202,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 800624,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.rsp2"
@@ -11729,7 +11729,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 808615,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Cinemachine.UnityAdditionalFile.txt"
@@ -11755,7 +11755,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 848307,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Cinemachine.rsp2"
@@ -12344,7 +12344,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 856661,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.UnityAdditionalFile.txt"
@@ -12370,7 +12370,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 890108,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.CollabProxy.Editor.rsp2"
@@ -12895,7 +12895,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 898745,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.UnityAdditionalFile.txt"
@@ -12921,7 +12921,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 936472,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.rsp2"
@@ -13518,7 +13518,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 944805,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.UnityAdditionalFile.txt"
@@ -13544,7 +13544,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 982580,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.rsp2"
@@ -14116,7 +14116,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 991197,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.UnityAdditionalFile.txt"
@@ -14142,7 +14142,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1048581,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.rsp2"
@@ -14920,7 +14920,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1057204,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.Editor.UnityAdditionalFile.txt"
@@ -14946,7 +14946,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1147080,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.Editor.rsp2"
@@ -15940,7 +15940,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1155720,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.UnityAdditionalFile.txt"
@@ -15966,7 +15966,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1236773,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.rsp2"
@@ -16859,7 +16859,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1245163,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.Editor.UnityAdditionalFile.txt"
@@ -16885,7 +16885,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1298897,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.Editor.rsp2"
@@ -17604,7 +17604,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1307721,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.UnityAdditionalFile.txt"
@@ -17630,7 +17630,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1343155,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.rsp2"
@@ -18156,7 +18156,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1351629,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.UnityAdditionalFile.txt"
@@ -18182,7 +18182,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1392124,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.rsp2"
@@ -18780,7 +18780,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1400849,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.UnityAdditionalFile.txt"
@@ -18806,7 +18806,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1435812,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.rsp2"
@@ -19374,7 +19374,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1444839,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.Editor.UnityAdditionalFile.txt"
@@ -19400,7 +19400,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1486549,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.Editor.rsp2"
@@ -19990,7 +19990,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1495566,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Shared.Editor.UnityAdditionalFile.txt"
@@ -20016,7 +20016,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1529490,
       "PayloadLength": 26,
-      "PayloadDebugContentSnippet": "/pathmap:\"E:\\sermonGame\"=.",
+      "PayloadDebugContentSnippet": "/pathmap:\"D:\\sermonGame\"=.",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Shared.Editor.rsp2"
@@ -20561,7 +20561,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1538584,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt"
@@ -20573,7 +20573,7 @@
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 1538683,
-      "PayloadLength": 35335,
+      "PayloadLength": 35363,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
       "Outputs": [
@@ -20585,7 +20585,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1574105,
+      "PayloadOffset": 1574133,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -20851,6 +20851,7 @@
         "Assets/Scripts/GameUI.cs",
         "Assets/Scripts/GoldenRuleScenario1.cs",
         "Assets/Scripts/GoldenRuleScenario2.cs",
+        "Assets/Scripts/HeadBob.cs",
         "Assets/Scripts/InputDebugger.cs",
         "Assets/Scripts/Interactable.cs",
         "Assets/Scripts/InteractableObject.cs",
@@ -21121,7 +21122,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1574201,
+      "PayloadOffset": 1574229,
       "PayloadLength": 9366,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -21366,9 +21367,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Assembly-CSharp-Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1583680,
+      "PayloadOffset": 1583708,
       "PayloadLength": 13,
-      "PayloadDebugContentSnippet": "E:\\sermonGame",
+      "PayloadDebugContentSnippet": "D:\\sermonGame",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt"
@@ -21379,7 +21380,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1583786,
+      "PayloadOffset": 1583814,
       "PayloadLength": 34977,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -21392,7 +21393,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp2",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1618857,
+      "PayloadOffset": 1618885,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -21719,7 +21720,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 1618960,
+      "PayloadOffset": 1618988,
       "PayloadLength": 10234,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -22913,7 +22914,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
-      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Cinemachine.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.Core.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.Flow.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.State.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"E:\\sermonGame\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -a=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.testtools.codecoverage@1.2.5\\lib\\ReportGenerator\\ReportGeneratorMerged.dll\" -a=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Runtime\\VisualScripting.Flow\\Dependencies\\NCalc\\Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"E:\\sermonGame\\Library\\ScriptAssemblies\" -s=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -s=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.testtools.codecoverage@1.2.5\\lib\\ReportGenerator\" -s=\"E:\\sermonGame\\Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Runtime\\VisualScripting.Flow\\Dependencies\\NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Assembly-CSharp.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Cinemachine.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Unity.Timeline.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.Core.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.Flow.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\Unity.VisualScripting.State.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\UnityEngine.TestRunner.dll\" -a=\"D:\\sermonGame\\Library\\ScriptAssemblies\\UnityEngine.UI.dll\" -a=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\\nunit.framework.dll\" -a=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.testtools.codecoverage@1.2.5\\lib\\ReportGenerator\\ReportGeneratorMerged.dll\" -a=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Runtime\\VisualScripting.Flow\\Dependencies\\NCalc\\Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\Managed\\UnityEngine\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netfx\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\compat\\2.1.0\\shims\\netstandard\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\Extensions\\2.0.0\" -s=\"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.37f1\\Editor\\Data\\NetStandard\\ref\\2.1.0\" -s=\"D:\\sermonGame\\Library\\ScriptAssemblies\" -s=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6\\net35\\unity-custom\" -s=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.testtools.codecoverage@1.2.5\\lib\\ReportGenerator\" -s=\"D:\\sermonGame\\Library\\PackageCache\\com.unity.visualscripting@1.9.4\\Runtime\\VisualScripting.Flow\\Dependencies\\NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/netcorerun/netcorerun.exe",
         "C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -23207,6 +23208,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/1900b0aE.dag.json",
-  "PayloadsFile": "E:/sermonGame/Library/Bee/1900b0aE.dag.payloads",
+  "PayloadsFile": "D:/sermonGame/Library/Bee/1900b0aE.dag.payloads",
   "RelativePathToRoot": "../.."
 }

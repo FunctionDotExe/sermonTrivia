@@ -25,6 +25,10 @@ public class QuizManager : MonoBehaviour
     public bool allowKeyboardInput = true;
     public string mainSceneName = "DemoScene"; // Name of your main scene
     
+    [Header("Controller Settings")]
+    public float stickSensitivity = 0.5f;
+    public float navigationCooldown = 0.2f;
+    
     private List<QuizQuestion> questions = new List<QuizQuestion>();
     private QuizQuestion currentQuestion;
     private int currentQuestionIndex = 0;
@@ -32,6 +36,8 @@ public class QuizManager : MonoBehaviour
     private int currentScore = 0;
     private int correctAnswers = 0;
     private int totalQuestionsAnswered = 0;
+    private int selectedButtonIndex = 0;
+    private float lastNavigationTime = 0;
     
     // Static variables to preserve state between scene loads
     private static bool isReturningFromQuiz = false;
@@ -97,32 +103,72 @@ public class QuizManager : MonoBehaviour
     
     void Update()
     {
-        // Check for keyboard input if enabled and can answer
-        if (allowKeyboardInput && canAnswer)
+        if (!canAnswer) return;
+
+        // Controller input for navigation
+        float verticalInput = Input.GetAxis("Vertical");
+        bool buttonPressed = Input.GetButtonDown("Submit") || Input.GetButtonDown("Fire1");
+
+        // Check if enough time has passed since last navigation
+        if (Time.time - lastNavigationTime >= navigationCooldown)
         {
-            // Check for number keys 1-4 (both main keyboard and numpad)
-            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+            // Navigate up
+            if (verticalInput > stickSensitivity)
             {
-                SelectAnswer(0);
+                selectedButtonIndex--;
+                if (selectedButtonIndex < 0) selectedButtonIndex = answerButtons.Length - 1;
+                UpdateButtonSelection();
+                lastNavigationTime = Time.time;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+            // Navigate down
+            else if (verticalInput < -stickSensitivity)
             {
-                SelectAnswer(1);
+                selectedButtonIndex++;
+                if (selectedButtonIndex >= answerButtons.Length) selectedButtonIndex = 0;
+                UpdateButtonSelection();
+                lastNavigationTime = Time.time;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+        }
+
+        // Controller button press to select answer
+        if (buttonPressed)
+        {
+            answerButtons[selectedButtonIndex].onClick.Invoke();
+        }
+
+        // Keyboard number keys (1-4) for quick selection
+        if (allowKeyboardInput)
+        {
+            for (int i = 0; i < answerButtons.Length; i++)
             {
-                SelectAnswer(2);
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    answerButtons[i].onClick.Invoke();
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        }
+    }
+    
+    private void UpdateButtonSelection()
+    {
+        // Update visual selection of buttons
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            // Get the button's colors
+            ColorBlock colors = answerButtons[i].colors;
+            
+            if (i == selectedButtonIndex)
             {
-                SelectAnswer(3);
+                // Highlight selected button
+                colors.normalColor = new Color(0.8f, 0.8f, 1f);
+            }
+            else
+            {
+                // Reset other buttons to default
+                colors.normalColor = Color.white;
             }
             
-            // Allow returning with Escape key
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                ReturnToMainScene();
-            }
+            answerButtons[i].colors = colors;
         }
     }
     
@@ -152,11 +198,20 @@ public class QuizManager : MonoBehaviour
     
     void SetupButtons()
     {
-        // Setup answer button click events
+        // Initialize button handlers
         for (int i = 0; i < answerButtons.Length; i++)
         {
             int index = i; // Capture the index for the lambda
             answerButtons[i].onClick.AddListener(() => SelectAnswer(index));
+        }
+        
+        // Set initial button selection
+        selectedButtonIndex = 0;
+        UpdateButtonSelection();
+        
+        if (returnButton != null)
+        {
+            returnButton.onClick.AddListener(ReturnToMainScene);
         }
     }
     
@@ -223,11 +278,11 @@ public class QuizManager : MonoBehaviour
             feedbackText.color = Color.green;
             
             // Add points locally
-            currentScore += pointsForCorrectAnswer;
+            currentScore += Mathf.RoundToInt(pointsForCorrectAnswer);
             
             // Add points and time bonus using ScoreManager
-            ScoreManager.Instance.AddPoints(pointsForCorrectAnswer);
-            ScoreManager.Instance.AddTime(timeBonus);
+            ScoreManager.Instance.AddPoints(Mathf.RoundToInt(pointsForCorrectAnswer));
+            ScoreManager.Instance.AddTime(Mathf.RoundToInt(timeBonus));
         }
         else
         {

@@ -13,8 +13,10 @@ public class ScoreHelper : MonoBehaviour
     // Add a method for time bonuses
     public static void AwardTime(float seconds)
     {
+        // Convert float seconds to int before adding
+        int timeInSeconds = Mathf.RoundToInt(seconds);
         // Use the ScoreManager to add time
-        ScoreManager.Instance.AddTime(seconds);
+        ScoreManager.Instance.AddTime(timeInSeconds);
         Debug.Log($"ScoreHelper: Awarded {seconds} seconds");
     }
 } 

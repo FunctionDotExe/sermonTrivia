@@ -374,6 +374,7 @@
 "Assets/Scripts/GameUI.cs"
 "Assets/Scripts/GoldenRuleScenario1.cs"
 "Assets/Scripts/GoldenRuleScenario2.cs"
+"Assets/Scripts/HeadBob.cs"
 "Assets/Scripts/InputDebugger.cs"
 "Assets/Scripts/Interactable.cs"
 "Assets/Scripts/InteractableObject.cs"
