@@ -36,6 +36,11 @@ public class ScoreManager : MonoBehaviour
         Debug.Log($"Time added: {time}");
     }
 
+    public int GetScore()
+    {
+        return currentScore;
+    }
+
     private void UpdateScoreDisplay()
     {
         if (scoreText != null)
