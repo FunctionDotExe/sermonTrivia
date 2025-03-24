@@ -1,15 +1,43 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - FlyCamera
+    - AlmsgivingScenario1
+    - AlmsgivingScenario2
+    - AngerScenario1
+    - AngerScenario2
+    - BullyingScenario
+    - CityPeople.CityPeople
+    - DialogueManager
     - GameManager
-    - PlayerController
-    - QuestionData
+    - GoldenRuleScenario1
+    - GoldenRuleScenario2
+    - HeadBob
+    - InputDebugger
+    - JudgingOthersScenario1
+    - JudgingOthersScenario2
+    - LawAndProphetsScenario1
+    - LawAndProphetsScenario2
+    - LoveForEnemiesScenario
+    - MigrateStarScripts
+    - PlayerMovementWithJump
+    - PlayerUnfreezer
+    - PrayerScenario
     - QuizManager
+    - SaltAndLightScenario1
+    - SaltAndLightScenario2
+    - ScoreManager
+    - SermonOnTheMountTrivia
     - StarManager
     - StarObject
-    - TurnManager
+    - StarTriviaInteraction
+    - StarTriviaSetup
     - UnityStandardAssets.ImageEffects.SunShafts
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachineComposer
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineTransposer
+    - Cinemachine.CinemachineVirtualCamera
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -36,7 +64,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
   serializedClasses:
     Assembly-CSharp:
-    - Question
+    - StarTriviaSetup/TriviaQuestion
+    Cinemachine:
+    - Cinemachine.CinemachineBlendDefinition
+    - Cinemachine.CinemachineBrain/BrainEvent
+    - Cinemachine.CinemachineBrain/VcamActivatedEvent
+    - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
+    - Cinemachine.LensSettings
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -54,6 +88,7 @@ ScriptsOnlyBuild:
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.UnityEvent`1[System.Int32]
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -93,6 +128,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -110,33 +147,97 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2136}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 1612}
     - Class: 114
-      Script: {instanceID: 3954}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 4194}
+      Script: {instanceID: 1820}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 5838}
+      Script: {instanceID: 1974}
     - Class: 114
-      Script: {instanceID: 23326}
+      Script: {instanceID: 2176}
     - Class: 114
-      Script: {instanceID: 23422}
+      Script: {instanceID: 2250}
     - Class: 114
-      Script: {instanceID: 32398}
+      Script: {instanceID: 2302}
     - Class: 114
-      Script: {instanceID: 32402}
+      Script: {instanceID: 2420}
     - Class: 114
-      Script: {instanceID: 57490}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 91072}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 145616}
+      Script: {instanceID: 2762}
     - Class: 114
-      Script: {instanceID: 156198}
+      Script: {instanceID: 2904}
+    - Class: 114
+      Script: {instanceID: 3228}
+    - Class: 114
+      Script: {instanceID: 3784}
+    - Class: 114
+      Script: {instanceID: 4116}
+    - Class: 114
+      Script: {instanceID: 4254}
+    - Class: 114
+      Script: {instanceID: 4528}
+    - Class: 114
+      Script: {instanceID: 4576}
+    - Class: 114
+      Script: {instanceID: 4762}
+    - Class: 114
+      Script: {instanceID: 4924}
+    - Class: 114
+      Script: {instanceID: 5234}
+    - Class: 114
+      Script: {instanceID: 5286}
+    - Class: 114
+      Script: {instanceID: 5516}
+    - Class: 114
+      Script: {instanceID: 5850}
+    - Class: 114
+      Script: {instanceID: 5920}
+    - Class: 114
+      Script: {instanceID: 5930}
+    - Class: 114
+      Script: {instanceID: 6062}
+    - Class: 114
+      Script: {instanceID: 6400}
+    - Class: 114
+      Script: {instanceID: 6566}
+    - Class: 114
+      Script: {instanceID: 6608}
+    - Class: 114
+      Script: {instanceID: 6666}
+    - Class: 114
+      Script: {instanceID: 6686}
+    - Class: 114
+      Script: {instanceID: 6934}
+    - Class: 114
+      Script: {instanceID: 7008}
+    - Class: 114
+      Script: {instanceID: 7110}
+    - Class: 114
+      Script: {instanceID: 7126}
+    - Class: 114
+      Script: {instanceID: 7144}
+    - Class: 114
+      Script: {instanceID: 7172}
+    - Class: 114
+      Script: {instanceID: 7316}
+    - Class: 114
+      Script: {instanceID: 7444}
+    - Class: 114
+      Script: {instanceID: 7746}
+    - Class: 114
+      Script: {instanceID: 7826}
+    - Class: 114
+      Script: {instanceID: 8088}
+    - Class: 114
+      Script: {instanceID: 8276}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -147,6 +248,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
@@ -154,6 +257,14 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -181,23 +292,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1574}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 1612}
     - Class: 114
-      Script: {instanceID: 2728}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 5376}
+      Script: {instanceID: 5286}
     - Class: 114
-      Script: {instanceID: 5530}
+      Script: {instanceID: 5290}
     - Class: 114
-      Script: {instanceID: 5838}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 156188}
+      Script: {instanceID: 6400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -217,6 +328,12 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: 540882762544409cc4530e60db00e951
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
@@ -227,6 +344,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 8b6737985d25eac16c9e6e2a2c5b4a60
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerMovementWithJump
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -241,6 +364,12 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: 85f24827eddd27f43d0c2c836b171707
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineExternalCamera
+  - hash:
+      serializedVersion: 2
       Hash: 8dff8e9853297d341afa0c11f9091b59
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -251,6 +380,30 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 079f8bbb032c5137806627bae6787f1f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFreeLook
+  - hash:
+      serializedVersion: 2
+      Hash: 0e4ecf96cd149632a6c15b13dedeaaa7
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTriggerAction
+  - hash:
+      serializedVersion: 2
+      Hash: e474ddf42b971f1a944ab4bde8676f60
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreTracker
+  - hash:
+      serializedVersion: 2
+      Hash: d324bc2ea9d027bf2d08b958709a4fe8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueManager
   - hash:
       serializedVersion: 2
       Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
@@ -271,6 +424,48 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 9bf109832986f0a8be385e4fe52864f1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BullyingScenario
+  - hash:
+      serializedVersion: 2
+      Hash: 5b47c667a93e350389d0f06f9be40d9d
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineCameraOffset
+  - hash:
+      serializedVersion: 2
+      Hash: 5c07ffee44a88171df4a6664008e2180
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarTriviaInteraction
+  - hash:
+      serializedVersion: 2
+      Hash: 08139f2fffd63f0d03be43905ce2da34
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UISetup
+  - hash:
+      serializedVersion: 2
+      Hash: 674f86f72fc0bf1ef8d192a4dea794c8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineCollider
+  - hash:
+      serializedVersion: 2
+      Hash: 222a67ac7fcb4ce92e2564870feee320
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PrayerScenario
+  - hash:
+      serializedVersion: 2
+      Hash: 769f5e9c16ce785feedf230d7f91392f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBlenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: b12640dfdb5966813e9dd838893e6c4a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -283,6 +478,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 60fcdafa7ead36debf1c3663c8b29aa1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TriviaScoreIntegrator
+  - hash:
+      serializedVersion: 2
       Hash: ad49e20f31ed572e586aa8bbaafb591b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -293,6 +494,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerUpMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2f438705ced2d9cde4ae00d53e757a45
+    assemblyName: Assembly-CSharp
+    namespaceName: UnityStandardAssets.ImageEffects
+    className: SunShafts
   - hash:
       serializedVersion: 2
       Hash: 7e93247d600e115dac0cdd880de94e99
@@ -313,10 +520,34 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: c97238c7d563364315d287df3bc77339
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TextFixer
+  - hash:
+      serializedVersion: 2
+      Hash: 52461ca11052b905bc2ffccb5c41a34d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LoveForEnemiesScenario
+  - hash:
+      serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 76985d05e160474a34860b693b206ee2
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineVirtualCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 050ec57a916a11e219371a8003e45c6e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonClickTest
   - hash:
       serializedVersion: 2
       Hash: e987953190eb4c12cf19df790566dc2c
@@ -349,10 +580,28 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnterMessageListener
   - hash:
       serializedVersion: 2
+      Hash: fb4031da5fd4577d4a88ce182701a564
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FlyCamera
+  - hash:
+      serializedVersion: 2
       Hash: 7e12302f66e3c8ed5bcfea4ce65fccea
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: efd02e05d05bad651e8a5a2d1836f6cb
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePipeline
+  - hash:
+      serializedVersion: 2
+      Hash: 9a6bfc1bbbd2b31fc470c7ce85567266
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
       Hash: fce9b835d1e8b08e7ecea8da19f21986
@@ -371,6 +620,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: a5c758f433cce203d0aeb092195f7366
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DebugHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 9762431eba50150b0cd6aefbb58250af
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MouseCameraControl
   - hash:
       serializedVersion: 2
       Hash: 3b5263a98bcc71d9a9d1d78a31b34ced
@@ -409,16 +670,58 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 00917d7f38cd893776d186bb54857323
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueManagerHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 411dca89ce6c84e1ee77e2edd6d26208
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineInputProvider
+  - hash:
+      serializedVersion: 2
+      Hash: 43ba8d6499e36926549225e81183d2ca
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 23859180ed9e2256cc976c5e514efd55
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: QuizPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 1de42070c8cfb5ce0dd077efe6147882
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: Cinemachine3rdPersonFollow
+  - hash:
+      serializedVersion: 2
       Hash: b98001682cba83786775c9e415b89a61
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 315538ac7efd098c39a5c5d1d431fb87
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MultiplayerGameManager
+  - hash:
+      serializedVersion: 2
       Hash: a1ac4c50e55874de16eee3db71aa9784
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 8222243fab48a9bfee1ae736fccd9e84
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
       Hash: 915204dac8acad99f076d6e72ada0a0f
@@ -463,10 +766,22 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: 31666030fd51e4173e4cae669f8984e5
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineSmoothPath
+  - hash:
+      serializedVersion: 2
       Hash: c6369b4cc3be620d6c9300e920bc3d52
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: VariablesAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 07ac5abbf1211711231ba9fc21c550e6
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
       Hash: 7bdff9e91edfd9600f92a185def7e34a
@@ -499,6 +814,12 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: ad7a5ffad8a32193d069882ae204e288
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFramingTransposer
+  - hash:
+      serializedVersion: 2
       Hash: 960935b102b3064f4b924de16426e340
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -517,6 +838,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a4ee1a7824e62e3a7189fc8b7f4cade5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 0a3f328f3ea906bbbcf794f4c27ee59d
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
@@ -529,6 +856,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: c4cd63f10b16ed4d4ae3c19f0ab18f0d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineIndependentImpulseListener
+  - hash:
+      serializedVersion: 2
       Hash: 552dca338f20933ce362ebbe559a6aa6
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -539,6 +872,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: e636708ac1677b6f3be0cafe31e1bf77
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineGroupComposer
+  - hash:
+      serializedVersion: 2
+      Hash: e7f05861e12546a1cd5319279396c5f1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarObject
   - hash:
       serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
@@ -571,10 +916,22 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: cacf61280eff55ba0f02a0f286c959ba
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineTouchInputMapper
+  - hash:
+      serializedVersion: 2
       Hash: 042785b832afb73fd0585521aa7baf43
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 65b8d80dea0932c164a60cf0ffe597ef
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: Cinemachine3rdPersonAim
   - hash:
       serializedVersion: 2
       Hash: 1a680d9a08de79b0d2c779e78c9843b4
@@ -595,16 +952,46 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 70373e18181a2229c9ec8448873d7545
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineHardLockToTarget
+  - hash:
+      serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: a013bd07781ea71be78aca4d84398e85
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: GroupWeightManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 06cb1564afe1a0439b4f2a006c4e4c08
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FixedCameraController
+  - hash:
+      serializedVersion: 2
+      Hash: 5321f58daa5797b2eac77b17ea0bb568
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTargetGroup
+  - hash:
+      serializedVersion: 2
       Hash: e7e95903ca66d58e1a7cbd71f824e16d
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 7926f20f992d275b1a8478f8a9c9abca
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonTest
   - hash:
       serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
@@ -619,16 +1006,82 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a7ce75f44b7b76a19a43cf694616b29d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarInteraction
+  - hash:
+      serializedVersion: 2
+      Hash: b756b333d8a1e159613ca690b9ceace7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NPCInteraction
+  - hash:
+      serializedVersion: 2
+      Hash: 46a1923eb938fb3a0047eda0650e8d38
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NumberButtonHandler
+  - hash:
+      serializedVersion: 2
+      Hash: ddfa8eb512ca87bf5c77fbc23de868b6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JudgingOthersScenario2
+  - hash:
+      serializedVersion: 2
+      Hash: 11d65a9119626daae656690fd1fb8d1e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineCollisionImpulseSource
+  - hash:
+      serializedVersion: 2
+      Hash: 09a9ebb3299853f8a1d66f750e11097e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePOV
+  - hash:
+      serializedVersion: 2
       Hash: 7e9cad7f71f9cc52f699bbd2d2a75734
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 3e84fb1460171110b2a5a18d002f3888
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GoldenRuleScenario1
+  - hash:
+      serializedVersion: 2
+      Hash: 66af56f418741adb9240b92ea4d8e611
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameUI
+  - hash:
+      serializedVersion: 2
+      Hash: e6f70e870fdcae067b72c5057ac3e077
+    assemblyName: Assembly-CSharp
+    namespaceName: CityPeople
+    className: DemoCamera
+  - hash:
+      serializedVersion: 2
+      Hash: f763b56547409acea1e4d74732458997
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: QuizSceneManager
+  - hash:
+      serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ActivationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 81c1ae8a097b2ae92f03307a9a3d2771
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineComposer
   - hash:
       serializedVersion: 2
       Hash: e402a382f213255c22bda9254dd831b3
@@ -647,6 +1100,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 98ad84ab9a7070e8ba3b6a616a057e2d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
       Hash: f2098fcd8ee983a05ec192f63904298f
@@ -673,6 +1132,18 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: cce88ec4737eb3cf0faab402148b7c4e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePath
+  - hash:
+      serializedVersion: 2
+      Hash: 240a44072d406174c464da5916816589
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine.PostFX
+    className: CinemachineVolumeSettings
+  - hash:
+      serializedVersion: 2
       Hash: 47ee34eb8b6021efa0289dbbb17a5a85
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -683,6 +1154,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStayMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b6fedfcf2dcb2ebde70968ff431a79c2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SimplePlayerMovement
   - hash:
       serializedVersion: 2
       Hash: 10c17b309bdca62b4d7fbaf113ed4ca0
@@ -709,6 +1186,12 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 37eca468e657ed8e7ec3bfbe6a1bab0b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MigrateStarScripts
+  - hash:
+      serializedVersion: 2
       Hash: 191cd500c627cd6682ef6f70b8e47f2c
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -727,6 +1210,18 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: 0aaa149771f6e173c08a35e374c3090f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: QuizManager
+  - hash:
+      serializedVersion: 2
+      Hash: 83f174e07ade4f894d7f9732d66a9b76
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Interactable
+  - hash:
+      serializedVersion: 2
       Hash: d82086405f46de14829f6b4bcbdd8fc9
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -739,10 +1234,22 @@ ScriptsOnlyBuild:
     className: PanelEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 0515d3107a65fdbab3ad88c2c94de99f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineDollyCart
+  - hash:
+      serializedVersion: 2
       Hash: 9dd54ce33440072d6692a67e0c384ad1
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: fed246127036b91f6053a648384f01e7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LawAndProphetsScenario1
   - hash:
       serializedVersion: 2
       Hash: bf0842d88681628b29beb00b5e2ab785
@@ -757,22 +1264,88 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 8e5ad3bae097602eb8e4e442b8cbcbc7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SimpleMultiplayerManager
+  - hash:
+      serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: 540882762544409cc4530e60db00e951
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
+      Hash: 3813539dbbd222831298ae93f76f1e38
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine.PostFX
+    className: CinemachinePostProcessing
+  - hash:
+      serializedVersion: 2
+      Hash: 96f2309663796de0137da7344709f4a8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineOrbitalTransposer
+  - hash:
+      serializedVersion: 2
+      Hash: efbd3e8c829802c9df5617dcf2b4915a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ControllerDebug
+  - hash:
+      serializedVersion: 2
+      Hash: 191f312aa20acbce7223afc5d8a0d67d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DirectButtonHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 488f3922fa1ec8f7d72cbb04b88bf18d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBrain
+  - hash:
+      serializedVersion: 2
+      Hash: 560346f4cbb7006f1b0bb6c77805d7ec
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineConfiner
+  - hash:
+      serializedVersion: 2
+      Hash: aa0d9690d4fcf762950bd9364343ca93
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineSameAsFollowTarget
+  - hash:
+      serializedVersion: 2
+      Hash: df02ebda1a3889b1301562668f007c1b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AngerScenario2
+  - hash:
+      serializedVersion: 2
+      Hash: 422d7952c4af859bf26c03793c888ff9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AlmsgivingScenario1
+  - hash:
+      serializedVersion: 2
+      Hash: 15d30e89fefd40141614d0ea22b0da70
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineConfiner2D
   - hash:
       serializedVersion: 2
       Hash: ef38c1407dba8c1f5d69f5db61a694fe
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 7dee1d3c1d776b807847bc05d2a399d1
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineClearShot
   - hash:
       serializedVersion: 2
       Hash: 33656f83bb0079184b2206a69690ec46
@@ -787,16 +1360,40 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 1288e36083753c12fe21dc1e6b10628d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StaticCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 3a1e9a1c616df6aaa833992c9e9d5f11
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MultiplayerUI
+  - hash:
+      serializedVersion: 2
       Hash: da5a949a0bbd2ff91bc51c5805c2c41f
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 64fcfd9f055c97655e2ebda28d718956
+    assemblyName: Assembly-CSharp
+    namespaceName: UnityStandardAssets.ImageEffects
+    className: PostEffectsBase
+  - hash:
+      serializedVersion: 2
       Hash: 4f353524ce6564e40764f1ea080b2d85
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStay2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a0ddf0b40d1b953ae8301a079a3c5d57
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreIntegrator
   - hash:
       serializedVersion: 2
       Hash: 9104447b683bf70406fa01f12ecb564a
@@ -823,16 +1420,58 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 4bf8d6f446d3cafb03a885a5cf6f2cd9
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineImpulseSource
+  - hash:
+      serializedVersion: 2
       Hash: 672716ae97f6ddb615fa5ac3ec9da349
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 84fd5b58131005680184ae89163ce396
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineImpulseListener
+  - hash:
+      serializedVersion: 2
+      Hash: e14074e4d20a1483869563168261bd09
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JudgingOthersScenario1
+  - hash:
+      serializedVersion: 2
+      Hash: 4a9aa6c9ef0b3da95cc9b1394251ee10
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerInputController
+  - hash:
+      serializedVersion: 2
       Hash: 8bbce9932f67ad8e7f4eefec87800f94
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 0b9e7ab40bca1c36ac199ea858f30459
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AngerScenario1
+  - hash:
+      serializedVersion: 2
+      Hash: 65af1693879eaaccf2cc9c6ed27b8e0f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SaltAndLightScenario2
+  - hash:
+      serializedVersion: 2
+      Hash: b359f754f81f6bfd447c245bbbbed00f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SermonOnTheMountTrivia
   - hash:
       serializedVersion: 2
       Hash: f669be52680c88846b2093fd41d1e06e
@@ -859,16 +1498,34 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: 4ef621d4d564be5f9687dcdb8d76702f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerController
+  - hash:
+      serializedVersion: 2
       Hash: 4878e735441f4041539853759559c86f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 007cdf5f8025adc0b0d6bd71e664c865
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFixedSignal
+  - hash:
+      serializedVersion: 2
       Hash: c4b85a67513b4f0cf7b5fb2d5ded04b0
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c41ee3cf40b19f2504b7d5d89074273b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LawAndProphetsScenario2
   - hash:
       serializedVersion: 2
       Hash: d2ecd94550edf1b56aff07b1f4e41c57
@@ -883,6 +1540,12 @@ ScriptsOnlyBuild:
     className: BasicPlayableBehaviour
   - hash:
       serializedVersion: 2
+      Hash: a86c76e3081313bbddd26f2d2c1c6830
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: NoiseSettings
+  - hash:
+      serializedVersion: 2
       Hash: e8d390bd9ecacc453a7500b90d0c0292
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
@@ -895,10 +1558,22 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
+      Hash: 78618069c48d1c23a691cba9bf2a23e4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarManager
+  - hash:
+      serializedVersion: 2
       Hash: afb7b65d28d5a7423e69a1b076be0064
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 9bb037060f1431d4f0bc751bd5587f44
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonPositionFixer
   - hash:
       serializedVersion: 2
       Hash: 6a0b5b415c00f783202fd1ae2d556cb2
@@ -913,10 +1588,28 @@ ScriptsOnlyBuild:
     className: UnityOnPointerDownMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a1936c8dd11adbfb9defff5f8b6a9967
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTransposer
+  - hash:
+      serializedVersion: 2
       Hash: ee34255e3e86289bde9bad5e07b84cbc
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollRectValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6f0fae2f40e13f93a3f331c70ea58bae
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerUnfreezer
+  - hash:
+      serializedVersion: 2
+      Hash: ed393503f3ef173ae8aaefa5826a8392
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AlmsgivingScenario2
   - hash:
       serializedVersion: 2
       Hash: 830c3b545f6e6ee60a4cebab90516f2c
@@ -929,6 +1622,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 65fb673cd89ad645e0b71867e31b2be4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarTriviaSetup
+  - hash:
+      serializedVersion: 2
+      Hash: 275dc6493d45e38624c78d3863da376c
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineShot
   - hash:
       serializedVersion: 2
       Hash: a89b0448af4e1cd103a77f9fec0a961f
@@ -949,10 +1654,28 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: ec0d35329484cbf83a42d8dd297fe94b
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTrackedDolly
+  - hash:
+      serializedVersion: 2
+      Hash: 97e3954259256d40e639d18468f95711
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SaltAndLightScenario1
+  - hash:
+      serializedVersion: 2
       Hash: 67272c9c30c50b68ef1ce72ac0191c57
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMoveMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 00551d66204ee54a754030a674629e0c
+    assemblyName: Assembly-CSharp
+    namespaceName: CityPeople
+    className: CityPeople
   - hash:
       serializedVersion: 2
       Hash: d0392b7f3f52d5af537ade186b4f51f1
@@ -961,16 +1684,46 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 857d8ca691b14122a5d1ac884f2be721
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StarTriviaInteractionNew
+  - hash:
+      serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: bf6e7be90ceb7c0af6c10814723f5e19
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InteractableObject
+  - hash:
+      serializedVersion: 2
+      Hash: a99265337bbcb574a8c61bbdc198821a
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineStoryboard
+  - hash:
+      serializedVersion: 2
+      Hash: a049c5dd35cb574ae69ebee47a5f1bb8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineStateDrivenCamera
+  - hash:
+      serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnParticleCollisionMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e488c0b541260c097d0243cb5049e8b7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreManager
   - hash:
       serializedVersion: 2
       Hash: 0f5a086d4d028363983ba6ca30a01397
@@ -983,6 +1736,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: Variables
+  - hash:
+      serializedVersion: 2
+      Hash: 076304913622b5a4cee2fae7c35ea53a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: KeyboardButtonTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 9c482011378ee7da1cb661350d259223
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RaycastDebugger
+  - hash:
+      serializedVersion: 2
+      Hash: 0e5c86e79662619ead54311170afdc0b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HeadBob
   - hash:
       serializedVersion: 2
       Hash: b30c8635462e66ac20f4241106119f77
@@ -1003,10 +1774,34 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: c8efb8be0478240d4791acc3735f449b
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineRecomposer
+  - hash:
+      serializedVersion: 2
+      Hash: 5c07dd30a788898a98f349bde9e84e19
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBasicMultiChannelPerlin
+  - hash:
+      serializedVersion: 2
+      Hash: bc782ac348c1edd5e16d0c01a7498c76
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InputDebugger
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: bb3f98e564c44f3832fdfcb8521bf6e4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreHelper
   - hash:
       serializedVersion: 2
       Hash: 02a47340661d2ea7c6d30e292cfef403
@@ -1021,10 +1816,22 @@ ScriptsOnlyBuild:
     className: UnityOnMouseEnterMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 0ccd3dafcf8319e223afdb4ffed425f4
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFollowZoom
+  - hash:
+      serializedVersion: 2
       Hash: 4fcf0bb4aff1d14a1dfcdedc4b07bd05
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 64a3d9155c5337f651c3a072ac5ba196
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GoldenRuleScenario2
   - hash:
       serializedVersion: 2
       Hash: 00eef92bf387da2c9009267123d9d674
@@ -1037,74 +1844,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 35d61948e233ca226440ea959c5a87c7
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FlyCamera
-  - hash:
-      serializedVersion: 2
-      Hash: 64fcfd9f055c97655e2ebda28d718956
-    assemblyName: Assembly-CSharp
-    namespaceName: UnityStandardAssets.ImageEffects
-    className: PostEffectsBase
-  - hash:
-      serializedVersion: 2
-      Hash: 2f438705ced2d9cde4ae00d53e757a45
-    assemblyName: Assembly-CSharp
-    namespaceName: UnityStandardAssets.ImageEffects
-    className: SunShafts
-  - hash:
-      serializedVersion: 2
-      Hash: 8ca6c6948ea8c18046dba60ab348ae4f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: StarObject
-  - hash:
-      serializedVersion: 2
-      Hash: d86c38f71fdf6cd36214e90ce234371f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GameManager
-  - hash:
-      serializedVersion: 2
-      Hash: 9dfc37e8fa68bba425b16fa5edc097c1
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: StarManager
-  - hash:
-      serializedVersion: 2
-      Hash: f72bdada586b34639faf791ac83bdeed
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerController
-  - hash:
-      serializedVersion: 2
-      Hash: cb7fba5d2a34748199db7991aa28f39a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TurnManager
-  - hash:
-      serializedVersion: 2
-      Hash: 58c1585a60961e0177491a75d38aeab5
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: QuizUISetup
-  - hash:
-      serializedVersion: 2
-      Hash: f018fa4687fa6b9789a4a8faf6fa0e4f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: QuizManager
-  - hash:
-      serializedVersion: 2
-      Hash: 92efe5bd6e47a32c181266ce89de09c0
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: QuestionData
   platform: 19
   scenePathNames:
   - Assets/Scenes/DemoScene.unity
   - Assets/Scenes/QuizScene.unity
-  playerPath: C:/Users/mspil/Desktop/CodingProjects/sermonGame/build/sermonGame.exe
+  playerPath: D:/sermonGame/game/sermonGame.exe

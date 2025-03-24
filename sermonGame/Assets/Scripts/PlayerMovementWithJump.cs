@@ -5,6 +5,8 @@ public class PlayerMovementWithJump : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float gravity = 9.81f;
+    public float rotationSpeed = 2f;
+    public Transform cameraTransform;
     
     private CharacterController controller;
     private Vector3 velocity;
@@ -22,10 +24,22 @@ public class PlayerMovementWithJump : MonoBehaviour
             controller.radius = 0.5f;
             Debug.Log("Added CharacterController to player");
         }
+
+        // Get camera reference if not set
+        if (cameraTransform == null)
+        {
+            Camera mainCamera = Camera.main;
+            if (mainCamera != null)
+            {
+                cameraTransform = mainCamera.transform;
+            }
+        }
     }
     
     void Update()
     {
+        if (cameraTransform == null) return;
+
         // Check if grounded
         isGrounded = controller.isGrounded;
         
@@ -34,13 +48,17 @@ public class PlayerMovementWithJump : MonoBehaviour
             velocity.y = -2f; // Small negative value to keep grounded
         }
         
-        // Get input
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        // Get input (controller and keyboard)
+        float horizontalInput = Input.GetAxis("RightStickHorizontal");
+        float verticalInput = Input.GetAxis("RightStickVertical");
+        
+        // Fallback to keyboard input if no controller input
+        if (horizontalInput == 0) horizontalInput = Input.GetAxis("Horizontal");
+        if (verticalInput == 0) verticalInput = Input.GetAxis("Vertical");
         
         // Get camera forward and right
-        Vector3 forward = Camera.main.transform.forward;
-        Vector3 right = Camera.main.transform.right;
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
         
         // Project vectors onto the horizontal plane
         forward.y = 0;
@@ -49,15 +67,16 @@ public class PlayerMovementWithJump : MonoBehaviour
         right.Normalize();
         
         // Create movement vector relative to camera orientation
-        Vector3 movement = right * horizontalInput + forward * verticalInput;
+        Vector3 movement = (right * horizontalInput + forward * verticalInput).normalized;
         
         // Apply movement
-        controller.Move(movement * moveSpeed * Time.deltaTime);
-        
-        // Rotate player to face movement direction
         if (movement != Vector3.zero)
         {
-            transform.forward = movement;
+            controller.Move(movement * moveSpeed * Time.deltaTime);
+            
+            // Smoothly rotate to face movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
         
         // Jump

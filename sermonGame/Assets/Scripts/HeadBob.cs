@@ -5,7 +5,6 @@ public class HeadBob : MonoBehaviour
     [Header("Bob Parameters")]
     public float walkingBobbingSpeed = 14f;
     public float bobbingAmount = 0.05f;
-    public SimplePlayerMovement playerMovement;
     
     private float defaultPosY = 0;
     private float timer = 0;
@@ -17,12 +16,11 @@ public class HeadBob : MonoBehaviour
     
     void Update()
     {
-        if (playerMovement == null) return;
+        // Get right stick input for movement
+        float horizontalInput = Input.GetAxis("RightStickHorizontal");
+        float verticalInput = Input.GetAxis("RightStickVertical");
         
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        
-        // Check if player is moving (including controller input)
+        // Check if player is moving (including keyboard and controller input)
         bool isMoving = Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f ||
                        Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||
                        Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);

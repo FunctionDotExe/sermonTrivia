@@ -28,6 +28,8 @@ public class QuizManager : MonoBehaviour
     [Header("Controller Settings")]
     public float stickSensitivity = 0.5f;
     public float navigationCooldown = 0.2f;
+    public Color highlightedButtonColor = new Color(0.3f, 0.8f, 1f, 1f);
+    public Color normalButtonColor = Color.white;
     
     private List<QuizQuestion> questions = new List<QuizQuestion>();
     private QuizQuestion currentQuestion;
@@ -105,9 +107,9 @@ public class QuizManager : MonoBehaviour
     {
         if (!canAnswer) return;
 
-        // Controller input for navigation
-        float verticalInput = Input.GetAxis("Vertical");
-        bool buttonPressed = Input.GetButtonDown("Submit") || Input.GetButtonDown("Fire1");
+        // Controller input for navigation (D-pad or left stick)
+        float verticalInput = Input.GetAxis("Vertical") + Input.GetAxis("DPadVertical");
+        bool confirmPressed = Input.GetButtonDown("XButton"); // X button press
 
         // Check if enough time has passed since last navigation
         if (Time.time - lastNavigationTime >= navigationCooldown)
@@ -130,13 +132,13 @@ public class QuizManager : MonoBehaviour
             }
         }
 
-        // Controller button press to select answer
-        if (buttonPressed)
+        // X button press to select answer
+        if (confirmPressed)
         {
             answerButtons[selectedButtonIndex].onClick.Invoke();
         }
 
-        // Keyboard number keys (1-4) for quick selection
+        // Keyboard number keys (1-4) for quick selection (keep keyboard support)
         if (allowKeyboardInput)
         {
             for (int i = 0; i < answerButtons.Length; i++)
@@ -154,21 +156,27 @@ public class QuizManager : MonoBehaviour
         // Update visual selection of buttons
         for (int i = 0; i < answerButtons.Length; i++)
         {
-            // Get the button's colors
-            ColorBlock colors = answerButtons[i].colors;
+            Button button = answerButtons[i];
+            ColorBlock colors = button.colors;
             
             if (i == selectedButtonIndex)
             {
                 // Highlight selected button
-                colors.normalColor = new Color(0.8f, 0.8f, 1f);
+                colors.normalColor = highlightedButtonColor;
+                colors.highlightedColor = highlightedButtonColor;
+                colors.selectedColor = highlightedButtonColor;
+                button.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
             }
             else
             {
                 // Reset other buttons to default
-                colors.normalColor = Color.white;
+                colors.normalColor = normalButtonColor;
+                colors.highlightedColor = normalButtonColor;
+                colors.selectedColor = normalButtonColor;
+                button.transform.localScale = Vector3.one;
             }
             
-            answerButtons[i].colors = colors;
+            button.colors = colors;
         }
     }
     
